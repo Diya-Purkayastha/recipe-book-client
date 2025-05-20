@@ -1,10 +1,10 @@
 import React from 'react';
-// import { use } from 'react';
+import { use } from 'react';
 import Swal from 'sweetalert2';
-// import { AuthContext } from '../provider/AuthProvider';
+import { AuthContext } from '../provider/AuthProvider';
 
 const AddRecipe = () => {
-    // const { user } = use(AuthContext)
+    const { user } = use(AuthContext)
 
     const handleAddRecipe = e => {
         e.preventDefault();
@@ -12,19 +12,19 @@ const AddRecipe = () => {
         const formData = new FormData(form);
         const newRecipe = Object.fromEntries(formData.entries())
         console.log(newRecipe);
-        // const recipe = {
-        //     ...newRecipe,
-        //     userEmail: user.email,
-        //     userName: user.displayName,
-        //     userPhoto: user.photoURL,
-        // }
+        const recipe = {
+            ...newRecipe,
+            userEmail: user.email,
+            userName: user.displayName,
+            userPhoto: user.photoURL,
+        }
         //send recipe data to server
         fetch('http://localhost:3000/recipe', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newRecipe)
+            body: JSON.stringify(recipe)
         })
             .then(res => res.json())
             .then(data => {
