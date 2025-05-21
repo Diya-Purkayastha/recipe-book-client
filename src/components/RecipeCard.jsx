@@ -20,7 +20,7 @@ const RecipeCard = ({ recipe }) => {
         <p><strong>Cuisine:</strong> {cuisineType}</p>
         <p><strong>Likes:</strong> {likeCount}</p>
         <div className="card-actions justify-end">
-          <Link to={`/recipes/${_id}`} className="btn btn-sm btn-primary">
+          <Link to={`/recipe/${_id}`} className="btn btn-sm btn-primary">
             View Details
           </Link>
         </div>

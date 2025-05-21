@@ -10,6 +10,7 @@ import MyRecipe from "../pages/MyRecipe.jsx";
 import PrivateRoute from "../provider/PrivateRoute.jsx";
 import AllRecipe from "../pages/AllRecipe.jsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy.jsx";
+import RecipeDetails from "../pages/RecipeDetails.jsx";
 
 
 export const Router = createBrowserRouter([
@@ -45,6 +46,12 @@ export const Router = createBrowserRouter([
                element: <PrivateRoute>
                  <MyRecipe></MyRecipe>
                </PrivateRoute>
+            },
+            {
+                path:'/recipe/:id',
+                element:<PrivateRoute>
+                    <RecipeDetails></RecipeDetails>
+                </PrivateRoute>
             },
             {
                 path:'/privacypolicy',

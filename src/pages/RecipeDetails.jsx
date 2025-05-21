@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
+import { useParams } from 'react-router';
 
 const RecipeDetails = () => {
   const { id } = useParams();
