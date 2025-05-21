@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../components/Slider';
+import TopRecipes from '../components/TopRecipes';
 
 const Home = () => {
     return (
@@ -8,7 +9,8 @@ const Home = () => {
             <div className='max-w-5xl rounded-2xl mx-auto'>
                 <Slider />
             </div>
-       
+
+                <TopRecipes></TopRecipes>
         </div>
     );
 };

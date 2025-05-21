@@ -15,7 +15,7 @@ const Slider = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
-                pagination={{ clickable: true }}
+                
                 className="h-full"
             >
                 {/* Slide 1 */}

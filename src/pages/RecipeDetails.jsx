@@ -40,8 +40,8 @@ const RecipeDetails = () => {
 
   const {
     image, title, ingredients, instructions,
-    cuisineType, preparationTime, categories, likeCount,
-    userName, userPhoto
+    cuisineType, preparationTime, likeCount,
+    userName, userPhoto, categories
   } = recipe;
 
   return (
@@ -54,7 +54,7 @@ const RecipeDetails = () => {
           <p><strong>Preparation Time:</strong> {preparationTime} min</p>
           <p><strong>Ingredients:</strong> {ingredients}</p>
           <p><strong>Instructions:</strong> {instructions}</p>
-          <p><strong>Categories:</strong> {categories.join(', ')}</p>
+          <p><strong>Categories:</strong> {recipe.categories?.toString()}</p>
           <p><strong>Added by:</strong> {userName} <img src={userPhoto} className="inline w-8 h-8 rounded-full ml-2" /></p>
 
           <p className="mt-4 text-lg text-primary font-semibold">

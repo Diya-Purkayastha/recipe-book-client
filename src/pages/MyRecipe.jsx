@@ -86,7 +86,12 @@ const MyRecipe = () => {
                 <p><strong>Instructions:</strong> {recipe.instructions}</p>
                 <p><strong>Cuisine:</strong> {recipe.cuisineType}</p>
                 <p><strong>Prep Time:</strong> {recipe.preparationTime} min</p>
-                {/* <p><strong>Categories:</strong> {recipe.categories.join(', ')}</p> */}
+                <p>
+                  <strong>Categories:</strong>{' '}
+                  {recipe.categories?.map((cat, i) => (
+                    <span key={i}>{cat}{i < recipe.categories.length - 1 ? ', ' : ''}</span>
+                  ))}
+                </p>
                 <p><strong>Likes:</strong> {recipe.likeCount}</p>
                 <div className="card-actions justify-end">
                   <button className="btn btn-sm btn-warning" onClick={() => setEditing(recipe)}>Update</button>
@@ -112,7 +117,7 @@ const MyRecipe = () => {
             <textarea name="instructions" defaultValue={editing.instructions} placeholder="Instructions" className="textarea textarea-bordered w-full" required />
             <input name="cuisineType" defaultValue={editing.cuisineType} placeholder="Cuisine Type" className="input input-bordered w-full" required />
             <input name="preparationTime" type="number" defaultValue={editing.preparationTime} placeholder="Prep Time" className="input input-bordered w-full" required />
-            {/* <input name="categories" defaultValue={editing.categories.join(', ')} placeholder="Categories (comma-separated)" className="input input-bordered w-full" required /> */}
+            <input name="categories" defaultValue={editing.categories?.toString()} placeholder="Categories (comma-separated)" className="input input-bordered w-full" required />
 
             <div className="flex justify-end gap-2">
               <button type="button" onClick={() => setEditing(null)} className="btn btn-outline">Cancel</button>

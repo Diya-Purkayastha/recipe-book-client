@@ -1,113 +1,179 @@
-import React from 'react';
-import { use } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 
 const AddRecipe = () => {
-    const { user } = use(AuthContext)
+  const { user } = useContext(AuthContext);
 
-    const handleAddRecipe = e => {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const newRecipe = Object.fromEntries(formData.entries())
-        console.log(newRecipe);
-        const recipe = {
-            ...newRecipe,
-            userEmail: user.email,
-            userName: user.displayName,
-            userPhoto: user.photoURL,
-        }
-        //send recipe data to server
-        fetch('http://localhost:3000/recipe', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(recipe)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
+  const [formData, setFormData] = useState({
+    image: '',
+    title: '',
+    ingredients: '',
+    instructions: '',
+    cuisineType: '',
+    preparationTime: '',
+    categories: [],
+    likeCount: 0,
+  });
 
-                    Swal.fire({
-                        title: "Recipe added successfully!",
-                        icon: "success",
-                        draggable: true
-                    });
-                }
-            })
+  const cuisineOptions = ['Italian', 'Mexican', 'Indian', 'Chinese', 'Others'];
+  const categoryOptions = ['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Vegan'];
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData(prev => ({
+        ...prev,
+        categories: checked
+          ? [...prev.categories, value]
+          : prev.categories.filter(cat => cat !== value),
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value,
+      }));
     }
+  };
 
-    return (
-        <div className='p-24'>
-            <div className='p-12 text-center space-y-4'>
-                <h1 className='text-5xl'> Add Recipe</h1>
-                <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
-                <form onSubmit={handleAddRecipe}>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-                            <label className="label">Title</label>
-                            <input type="text" className="input w-full" name='title' placeholder="Recipe Title" />
-                        </fieldset>
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-                            <label className="label">Ingredients</label>
-                            <input type="text" name='ingredients' className="input w-full" placeholder="Recipe Ingredients" />
-                        </fieldset>
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-                            <label className="label">Preparation Time</label>
-                            <input type="text" name='time' className="input w-full" placeholder="Recipe Preparation Time" />
-                        </fieldset>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-                        <div className="dropdown dropdown-center items-center">
-                            <div tabIndex={0} role="button" className="btn m-1 w-full "><span className='text-accent'>Cuisine Type</span>  ⬇️</div>
-                            <ul tabIndex={0} className="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
-                                <li><a>Italian</a></li>
-                                <li><a>Mexican</a></li>
-                                <li><a>Indian</a></li>
-                                <li><a>Chinese</a></li>
-                                <li><a>Others</a></li>
-                            </ul>
-                        </div>
+    const recipe = {
+      ...formData,
+      preparationTime: Number(formData.preparationTime),
+      userEmail: user.email,
+      userName: user.displayName,
+      userPhoto: user.photoURL,
+    };
 
-                    </div>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4 my-6">
-                        <label className="label">Category</label>
-                        <label className="label">
-                            <input type="checkbox" className="checkbox" />
-                            Breakfast
-                        </label>
-                        <label className="label">
-                            <input type="checkbox" className="checkbox" />
-                            Lunch
-                        </label>
-                        <label className="label">
-                            <input type="checkbox" className="checkbox" />
-                            Dinner
-                        </label>
-                        <label className="label">
-                            <input type="checkbox" className="checkbox" />
-                            Dessert
-                        </label>
-                        <label className="label">
-                            <input type="checkbox" className="checkbox" />
-                            Vegan
-                        </label>
-                    </fieldset>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4 my-6">
-                        <label className="label">Instruction</label>
-                        <input name='supplier' type="text" className="input w-full" placeholder="Write full instruction" />
-                    </fieldset>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4 my-6">
-                        <label className="label">Photo URL</label>
-                        <input name='photoURL' type="text" className="input w-full" placeholder="coffee photoURL" />
-                    </fieldset>
-                    <button className='btn w-full' type='submit'>Add Recipe</button>
-                </form>
-            </div>
+    try {
+      const res = await fetch('https://your-server-url/recipe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(recipe),
+      });
+
+      const data = await res.json();
+
+      if (data.insertedId) {
+        Swal.fire('Success!', 'Recipe added successfully!', 'success');
+        setFormData({
+          image: '',
+          title: '',
+          ingredients: '',
+          instructions: '',
+          cuisineType: '',
+          preparationTime: '',
+          categories: [],
+          likeCount: 0,
+        });
+      } else {
+        Swal.fire('Error!', 'Failed to add recipe.', 'error');
+      }
+    } catch (err) {
+      console.error(err);
+      Swal.fire('Error!', 'Server error.', 'error');
+    }
+  };
+
+  return (
+    <div className="px-4 py-10 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold text-center mb-10">Add a New Recipe</h2>
+
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div className="flex flex-col gap-4">
+          <input
+            type="text"
+            name="image"
+            placeholder="Image URL"
+            value={formData.image}
+            onChange={handleChange}
+            className="input input-bordered w-full"
+            required
+          />
+
+          <input
+            type="text"
+            name="title"
+            placeholder="Recipe Title"
+            value={formData.title}
+            onChange={handleChange}
+            className="input input-bordered w-full"
+            required
+          />
+
+          <textarea
+            name="ingredients"
+            placeholder="Ingredients"
+            value={formData.ingredients}
+            onChange={handleChange}
+            className="textarea textarea-bordered h-24"
+            required
+          ></textarea>
+
+          <textarea
+            name="instructions"
+            placeholder="Instructions"
+            value={formData.instructions}
+            onChange={handleChange}
+            className="textarea textarea-bordered h-24"
+            required
+          ></textarea>
         </div>
-    );
-};
 
+        <div className="flex flex-col gap-4">
+          <select
+            name="cuisineType"
+            value={formData.cuisineType}
+            onChange={handleChange}
+            className="select select-bordered"
+            required
+          >
+            <option value="">Select Cuisine Type</option>
+            {cuisineOptions.map((cuisine) => (
+              <option key={cuisine} value={cuisine}>{cuisine}</option>
+            ))}
+          </select>
+
+          <input
+            type="number"
+            name="preparationTime"
+            placeholder="Preparation Time (in minutes)"
+            value={formData.preparationTime}
+            onChange={handleChange}
+            className="input input-bordered w-full"
+            required
+          />
+
+          <div>
+            <label className="block mb-2 font-medium">Categories</label>
+            <div className="flex flex-wrap gap-3">
+              {categoryOptions.map((cat) => (
+                <label key={cat} className="label cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="categories"
+                    value={cat}
+                    checked={formData.categories.includes(cat)}
+                    onChange={handleChange}
+                    className="checkbox mr-2"
+                  />
+                  {cat}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <button type="submit" className="btn btn-primary w-full mt-4">
+            Add Recipe
+          </button>
+        </div>
+
+      </form>
+    </div>
+  );
+};
 
 export default AddRecipe;
