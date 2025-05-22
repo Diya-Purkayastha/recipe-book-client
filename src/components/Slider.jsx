@@ -15,15 +15,15 @@ const Slider = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
-                
+
                 className="h-full"
             >
                 {/* Slide 1 */}
                 <SwiperSlide>
                     <div
-                        className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10 rounded-2xl" // ← added mt-10
+                        className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10 rounded-2xl"
                         style={{
-                            backgroundImage: "url('https://i.ibb.co/qM5JF3CS/pasta.jpg')",
+                            backgroundImage: "url('https://i.ibb.co/sGShmx6/eaters-collective-12e-HC6-Fx-Pyg-unsplash.jpg')",
                         }}
                     >
                         {/* Overlay */}
@@ -34,13 +34,14 @@ const Slider = () => {
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
                                 <h1 className="text-3xl md:text-5xl font-light leading-tight">
-                                    Apple Fitness+ <br />
-                                    <span className="font-bold">Essentials Box</span>
+                                    Healthy Pasta <br />
+                                    <span className="font-bold">Nutritional Info</span>
                                 </h1>
                                 <ul className="space-y-2 text-base">
-                                    <li>🎧 3-Month Fitness+ Membership</li>
-                                    <li>🎧 Access to Apple Health Challenges</li>
-                                    <li>🎧 Discount on Apple Watch Accessories</li>
+                                    <li>🌿 Fresh Basil & Herb Sauce</li>
+                                    <li>🧄 Garlic Olive Oil Infusion Pack</li>
+                                    <li>🍅 Sun-Dried Tomato Garnish</li>
+                                    <li>🍝 Organic Whole Wheat Pasta</li>
                                 </ul>
                                 <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
                                     START JOURNEY
@@ -59,7 +60,7 @@ const Slider = () => {
                     <div
                         className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10" // ← added mt-10
                         style={{
-                            backgroundImage: "url('https://i.ibb.co/Hf12qL7r/2.jpg')",
+                            backgroundImage: "url('https://i.ibb.co/5W6TWmSv/amirali-mirhashemian-pc-GND1-s-T5-I-unsplash.jpg')",
                         }}
                     >
                         {/* Overlay */}
@@ -70,13 +71,15 @@ const Slider = () => {
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
                                 <h1 className="text-3xl md:text-5xl font-light leading-tight">
-                                    Apple Fitness+ <br />
-                                    <span className="font-bold">Essentials Box</span>
+                                    Spicy Chowmein <br />
+                                    <span className="font-bold">10-Minute </span>
                                 </h1>
                                 <ul className="space-y-2 text-base">
-                                    <li>🎧 3-Month Fitness+ Membership</li>
-                                    <li>🎧 Access to Apple Health Challenges</li>
-                                    <li>🎧 Discount on Apple Watch Accessories</li>
+                                    <li>🍜 Premium Stir-Fry Noodles</li>
+                                    <li>🌶️ Signature Spicy Sauce Blend</li>
+                                    <li>🥕 Pre-cut Veggie Mix (Carrot, Cabbage, Bell Peppers)</li>
+                                    <li>🧄 Garlic & Ginger Flavor Boosters</li>
+
                                 </ul>
                                 <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
                                     START JOURNEY
@@ -95,7 +98,7 @@ const Slider = () => {
                     <div
                         className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10" // ← added mt-10
                         style={{
-                            backgroundImage: "url('https://i.ibb.co/Hf12qL7r/2.jpg')",
+                            backgroundImage: "url('https://i.ibb.co/cXprpZJg/david-holifield-k-Pxsq-UGne-XQ-unsplash.jpg')",
                         }}
                     >
                         {/* Overlay */}
@@ -106,14 +109,17 @@ const Slider = () => {
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
                                 <h1 className="text-3xl md:text-5xl font-light leading-tight">
-                                    Apple Fitness+ <br />
-                                    <span className="font-bold">Essentials Box</span>
+                                    Chocolate Cake <br />
+                                    <span className="font-bold">Bake Perfect</span>
                                 </h1>
                                 <ul className="space-y-2 text-base">
-                                    <li>🎧 3-Month Fitness+ Membership</li>
-                                    <li>🎧 Access to Apple Health Challenges</li>
-                                    <li>🎧 Discount on Apple Watch Accessories</li>
+                                    <li>🍫 Rich Dark Cocoa for Deep Flavor</li>
+                                    <li>🥚 All-in-One Dry Cake Mix</li>
+                                    <li>🧈 Buttery Vanilla Fusion</li>
+                                    <li>🍫 Ready-to-Spread Chocolate Ganache</li>
+                                   
                                 </ul>
+
                                 <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
                                     START JOURNEY
                                 </button>

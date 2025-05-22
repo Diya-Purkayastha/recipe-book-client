@@ -16,11 +16,20 @@ const Home = () => {
 
                 <TopRecipes></TopRecipes>
                 <IngredientsHome></IngredientsHome>
-               <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                <div className='my-8'>
+                <div className='text-center'>
+                <small>Where Recipes Come with Stories</small>
+                <h2 className="text-4xl font-bold mb-2">Read. Crave. Cook.</h2>
+                <p className="text-lg">Bite into Flavor, Stay for the Stories</p>
+                </div>
+                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 my-6'>
+                
                 {
                 blogs.map(blog =>  <BlogHome blog={blog}></BlogHome>)
                }
                </div>
+                </div>
+              
         </div>
     );
 };

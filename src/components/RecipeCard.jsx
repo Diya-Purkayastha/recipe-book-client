@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-
+import { FaHeart } from "react-icons/fa";
 
 const RecipeCard = ({ recipe }) => {
   const {
@@ -7,7 +7,8 @@ const RecipeCard = ({ recipe }) => {
     image,
     title,
     cuisineType,
-    likeCount
+    likeCount,
+    preparationTime
   } = recipe;
 
   return (
@@ -18,9 +19,10 @@ const RecipeCard = ({ recipe }) => {
       <div className="card-body">
         <h2 className="card-title text-lg">{title}</h2>
         <p><strong>Cuisine:</strong> {cuisineType}</p>
-        <p><strong>Likes:</strong> {likeCount}</p>
+        <p><strong>Time:</strong> {preparationTime}min</p>
+        <p className="flex items-center gap-2"><strong> <FaHeart /></strong> {likeCount}</p>
         <div className="card-actions justify-end">
-          <Link to={`/recipe/${_id}`} className="btn btn-sm btn-primary">
+          <Link to={`/recipe/${_id}`} className="btn btn-sm btn-secondary">
             View Details
           </Link>
         </div>

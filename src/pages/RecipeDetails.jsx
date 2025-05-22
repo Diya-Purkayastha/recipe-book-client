@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import { useParams } from 'react-router';
+import { FaHeart } from "react-icons/fa";
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const RecipeDetails = () => {
   const {
     image, title, ingredients, instructions,
     cuisineType, preparationTime, likeCount,
-    userName, userPhoto, categories
+    userName, userPhoto, 
   } = recipe;
 
   return (
@@ -63,9 +64,10 @@ const RecipeDetails = () => {
 
           <button
             onClick={handleLike}
-            className="btn btn-outline btn-primary mt-3"
+            className="btn  btn-secondary mt-3"
             disabled={liked || user?.email === recipe?.userEmail}
           >
+            <FaHeart />
             {liked ? 'Liked!' : 'Like'}
           </button>
         </div>
