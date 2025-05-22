@@ -19,7 +19,7 @@ const Header = () => {
     }
 
     return (
-        <div className='bg-primary border-b-1 border-white'>
+        <div className='bg-primary border-b-1 border-white ' >
             <div className="navbar w-11/12 mx-auto shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">

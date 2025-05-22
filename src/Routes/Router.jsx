@@ -11,6 +11,7 @@ import PrivateRoute from "../provider/PrivateRoute.jsx";
 import AllRecipe from "../pages/AllRecipe.jsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy.jsx";
 import RecipeDetails from "../pages/RecipeDetails.jsx";
+import BlogDetails from "../pages/BlogDetails.jsx";
 
 
 export const Router = createBrowserRouter([
@@ -56,6 +57,11 @@ export const Router = createBrowserRouter([
             {
                 path:'/privacypolicy',
                 Component:PrivacyPolicy
+            },
+            {
+                path:'/blog/:id',
+                Component:BlogDetails,
+                loader: () => fetch('/blog.json')
             }
     
     

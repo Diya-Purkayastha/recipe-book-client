@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "5 Quick & Healthy Breakfast Ideas",
+    "img": "https://i.ibb.co/3m7H4Bn0/vegan.jpg",
+    "description": "Start your day off right with these 5 quick and healthy breakfast recipes. From avocado toast topped with poached eggs to overnight oats loaded with fruit and nuts, these ideas are nutritious, easy to make, and perfect for busy mornings. We also share tips on how to meal prep your breakfast for the whole week, so you never skip the most important meal of the day.",
+    "time": "2025-05-10T08:00:00Z",
+    "author": "Chef Aisha Khan"
+  },
+  {
+    "id": "2",
+    "title": "Top 10 Dinner Recipes for Family Nights",
+    "img": "https://i.ibb.co/VrcvrXC/aloparata.jpg",
+    "description": "Looking for dinner inspiration? This blog features 10 delicious and easy-to-cook dinner recipes your whole family will love. From creamy chicken pasta and spicy beef stir-fry to vegetarian lasagna and homemade pizza, each recipe is designed to bring joy to your dinner table. Includes serving tips and side dish ideas.",
+    "time": "2025-05-15T18:30:00Z",
+    "author": "Marcus Del Toro"
+  },
+  {
+    "id": "3",
+    "title": "How to Bake the Perfect Chocolate Cake",
+    "img": "https://i.ibb.co/ccv5px1y/lavacake.jpg",
+    "description": "Baking the perfect chocolate cake is easier than you think! In this post, we walk you through every step—from choosing the right cocoa powder and mixing the batter to baking and decorating your cake. With expert tips and a tested recipe, you’ll wow your friends and family with a rich, moist chocolate cake every time.",
+    "time": "2025-05-18T14:00:00Z",
+    "author": "Lena Patel"
+  }
+]

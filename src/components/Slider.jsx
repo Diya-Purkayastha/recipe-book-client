@@ -23,7 +23,7 @@ const Slider = () => {
                     <div
                         className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10 rounded-2xl" // ← added mt-10
                         style={{
-                            backgroundImage: "url('https://i.ibb.co/Hf12qL7r/2.jpg')",
+                            backgroundImage: "url('https://i.ibb.co/qM5JF3CS/pasta.jpg')",
                         }}
                     >
                         {/* Overlay */}
