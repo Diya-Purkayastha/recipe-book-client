@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../components/Slider';
 import TopRecipes from '../components/TopRecipes';
+import IngredientsHome from '../components/IngredientsHome';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             </div>
 
                 <TopRecipes></TopRecipes>
+                <IngredientsHome></IngredientsHome>
         </div>
     );
 };
