@@ -6,7 +6,7 @@ const AllRecipe = () => {
   const [filterCuisine, setFilterCuisine] = useState('');
 
   useEffect(() => {
-    let url = 'http://localhost:3000/recipe';
+    let url = 'https://recipe-book-server-iota.vercel.app/recipe';
     fetch(url)
       .then(res => res.json())
       .then(data => {

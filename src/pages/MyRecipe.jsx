@@ -10,7 +10,7 @@ const MyRecipe = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myrecipe/${user.email}`)
+      fetch(`https://recipe-book-server-iota.vercel.app/myrecipe/${user.email}`)
         .then(res => res.json())
         .then(data => setRecipes(data));
     }
@@ -25,7 +25,7 @@ const MyRecipe = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const res = await fetch(`http://localhost:3000/recipe/${id}`, {
+        const res = await fetch(`https://recipe-book-server-iota.vercel.app/recipe/${id}`, {
           method: 'DELETE',
         });
         const data = await res.json();
@@ -51,7 +51,7 @@ const MyRecipe = () => {
       categories: form.categories.value.split(',').map(c => c.trim()),
     };
 
-    const res = await fetch(`http://localhost:3000/recipe/${editing._id}`, {
+    const res = await fetch(`https://recipe-book-server-iota.vercel.app/recipe/${editing._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedRecipe),

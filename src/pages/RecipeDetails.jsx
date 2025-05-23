@@ -8,10 +8,10 @@ const RecipeDetails = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const [recipe, setRecipe] = useState(null);
-  const [liked, setLiked] = useState(false);
+
 
   useEffect(() => {
-    fetch(`http://localhost:3000/recipe/${id}`)
+    fetch(`https://recipe-book-server-iota.vercel.app/recipe/${id}`)
       .then(res => res.json())
       .then(data => setRecipe(data));
   }, [id]);
@@ -23,7 +23,7 @@ const RecipeDetails = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/like/${id}`, {
+      const res = await fetch(`https://recipe-book-server-iota.vercel.app/like/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const RecipeDetails = () => {
       const data = await res.json();
       if (data.modifiedCount > 0) {
         setRecipe(prev => ({ ...prev, likeCount: prev.likeCount + 1 }));
-        setLiked(true);
+        
       }
     } catch (err) {
       console.error(err);
@@ -70,10 +70,10 @@ const RecipeDetails = () => {
           <button
             onClick={handleLike}
             className="btn  btn-secondary mt-3"
-            disabled={liked || user?.email === recipe?.userEmail}
+            disabled={user?.email === recipe?.userEmail}
           >
             <FaHeart />
-            {liked ? 'Liked!' : 'Like'}
+            Like
           </button>
         </div>
       </div>
@@ -82,3 +82,4 @@ const RecipeDetails = () => {
 };
 
 export default RecipeDetails;
+

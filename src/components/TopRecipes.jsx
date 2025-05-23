@@ -7,7 +7,7 @@ const TopRecipes = () => {
   const [topRecipes, setTopRecipes] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/recipe/top')
+    fetch('https://recipe-book-server-iota.vercel.app/recipe/top')
       .then(res => res.json())
       .then(data => setTopRecipes(data));
   }, []);
