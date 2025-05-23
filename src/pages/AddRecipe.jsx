@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import Lottie from 'lottie-react';
+import animationData from '../assets/animation/animation.json'
 
 const AddRecipe = () => {
   const { user } = useContext(AuthContext);
@@ -78,10 +80,16 @@ const AddRecipe = () => {
   };
 
   return (
-    <div className="px-4 py-10 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10">Add a New Recipe</h2>
+    <div className=" px-4 py-10 max-w-5xl mx-auto ">
+      <div className='flex justify-center mt-0'>
+        <Lottie animationData={animationData} loop={true} style={{ width: 150, height: 150 }}  />
+      </div>
+      <h2 className="text-4xl font-bold text-white text-center mb-10"> Add a New Recipe</h2> 
+      
+      
+    
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit}  className='border p-2 rounded-2xl border-white'>
 
         <div className="flex flex-col gap-4">
           <input
@@ -109,7 +117,7 @@ const AddRecipe = () => {
             placeholder="Ingredients"
             value={formData.ingredients}
             onChange={handleChange}
-            className="textarea textarea-bordered h-24"
+            className="textarea textarea-bordered h-24 w-full"
             required
           ></textarea>
 
@@ -118,13 +126,14 @@ const AddRecipe = () => {
             placeholder="Instructions"
             value={formData.instructions}
             onChange={handleChange}
-            className="textarea textarea-bordered h-24"
+            className="textarea textarea-bordered h-24 w-full"
             required
           ></textarea>
         </div>
 
         <div className="flex flex-col gap-4">
-          <select
+         <div className="flex gap-4 mt-4">
+           <select
             name="cuisineType"
             value={formData.cuisineType}
             onChange={handleChange}
@@ -143,22 +152,23 @@ const AddRecipe = () => {
             placeholder="Preparation Time (in minutes)"
             value={formData.preparationTime}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered "
             required
           />
+         </div>
 
           <div>
-            <label className="block mb-2 font-medium">Categories</label>
+            <label className="block mb-2 font-medium text-white">Categories:</label>
             <div className="flex flex-wrap gap-3">
               {categoryOptions.map((cat) => (
-                <label key={cat} className="label cursor-pointer">
+                <label key={cat} className="label cursor-pointer text-white">
                   <input
                     type="checkbox"
                     name="categories"
                     value={cat}
                     checked={formData.categories.includes(cat)}
                     onChange={handleChange}
-                    className="checkbox mr-2"
+                    className="checkbox mr-2 checkbox-secondary"
                   />
                   {cat}
                 </label>
@@ -166,7 +176,7 @@ const AddRecipe = () => {
             </div>
           </div>
 
-          <button type="submit" className="btn btn-primary w-full mt-4">
+          <button type="submit" className="btn btn-secondary w-full mt-4">
             Add Recipe
           </button>
         </div>

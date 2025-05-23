@@ -11,7 +11,12 @@
   --color-secondary: #ee5200;
   --color-accent: #494949;
 }
-
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-secondary: #494949;
+  --color-primary: #ff751a;
+  --color-accent: #bfbfbf;
+}
 .btn{
   color:white
 }

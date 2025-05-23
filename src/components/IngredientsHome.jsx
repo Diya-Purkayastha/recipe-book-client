@@ -2,8 +2,8 @@ import React from 'react';
 
 const IngredientsHome = () => {
     return (
-        <section className="w-full bg-[#ebebeb] py-16 rounded-2xl my-16">
-            <div className="max-w-6xl mx-auto px-4 text-center">
+        <section className="w-full bg-[#ebebeb] py-16 rounded-2xl my-16 ">
+            <div className="max-w-6xl mx-auto px-4 text-center dark:text-black">
                 <small>Tasty and Crunchy</small>
                 <h2 className="text-4xl font-bold mb-2">Ingredients</h2>
                 <p className="text-lg">From Farm to Fork – Fresh and Wholesome</p>

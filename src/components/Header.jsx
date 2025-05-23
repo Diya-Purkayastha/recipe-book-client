@@ -2,10 +2,19 @@ import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 const Header = () => {
     const { user, logOut } = use(AuthContext);
+    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
+
+    // Apply theme on load & change
+    useEffect(() => {
+        document.querySelector('html').setAttribute('data-theme', theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
     const handleLogout = () => {
         logOut()
@@ -40,15 +49,26 @@ const Header = () => {
                 </div>
                 <div className="navbar-center text-white  hidden lg:flex ">
                     <ul className="menu menu-horizontal flex gap-4 text-[16px] px-1">
-                           <NavLink to='/'> Home</NavLink>
-                            <NavLink to='/allrecipe'>All Recipe</NavLink>
-                            <NavLink to='/addrecipe'>Add Recipe</NavLink>
-                            <NavLink to='/myrecipe'>My Recipe</NavLink>
+                        <NavLink to='/'> Home</NavLink>
+                        <NavLink to='/allrecipe'>All Recipe</NavLink>
+                        <NavLink to='/addrecipe'>Add Recipe</NavLink>
+                        <NavLink to='/myrecipe'>My Recipe</NavLink>
 
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div className="login-btn md:flex md:gap-5">
+                        <label className="cursor-pointer flex items-center gap-2 shadow-sm p-1 bg-secondary rounded-2xl">
+                            🌞
+                            <input
+                                type="checkbox"
+                                className="toggle toggle-primary"
+                                checked={theme === "dark"}
+                                onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+                            />
+                            🌙
+                        </label>
+
                         <img className='w-12 hidden md:block rounded-full cursor-pointer' src={`${user ? user.photoURL : ''}`} alt="user" title={user ? user.displayName : 'guest'} />
                         {
                             user ? <button onClick={handleLogout} className='btn btn-secondary text-primary'>Log Out</button> : <Link to='login' className='btn btn-secondary md:px-10 text-primary'  >Login</Link>

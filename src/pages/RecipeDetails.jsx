@@ -25,7 +25,12 @@ const RecipeDetails = () => {
     try {
       const res = await fetch(`http://localhost:3000/like/${id}`, {
         method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: user.email })
       });
+
       const data = await res.json();
       if (data.modifiedCount > 0) {
         setRecipe(prev => ({ ...prev, likeCount: prev.likeCount + 1 }));
@@ -42,7 +47,7 @@ const RecipeDetails = () => {
   const {
     image, title, ingredients, instructions,
     cuisineType, preparationTime, likeCount,
-    userName, userPhoto, 
+    userName, userPhoto,
   } = recipe;
 
   return (
