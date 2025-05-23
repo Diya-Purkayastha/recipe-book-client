@@ -12,6 +12,7 @@ import AllRecipe from "../pages/AllRecipe.jsx";
 import PrivacyPolicy from "../pages/PrivacyPolicy.jsx";
 import RecipeDetails from "../pages/RecipeDetails.jsx";
 import BlogDetails from "../pages/BlogDetails.jsx";
+import ForgetPass from "../pages/ForgetPass.jsx";
 
 
 export const Router = createBrowserRouter([
@@ -62,6 +63,10 @@ export const Router = createBrowserRouter([
                 path:'/blog/:id',
                 Component:BlogDetails,
                 loader: () => fetch('/blog.json')
+            },
+            {
+                path:'/forgetpass',
+                Component: ForgetPass
             }
     
     
