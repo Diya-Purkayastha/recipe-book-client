@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '../css/slider.css'
+import { Slide } from 'react-awesome-reveal';
 
 const Slider = () => {
     return (
@@ -33,19 +34,26 @@ const Slider = () => {
                         <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-16">
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
-                                <h1 className="text-3xl md:text-5xl font-light leading-tight">
+                            <Slide direction="up" cascade damping={0.15} triggerOnce delay={300}>
+                                 <h1 className="text-3xl md:text-5xl font-light leading-tight">
                                     Healthy Pasta <br />
                                     <span className="font-bold">Nutritional Info</span>
                                 </h1>
+                            
+                               
                                 <ul className="space-y-2 text-base">
                                     <li>🌿 Fresh Basil & Herb Sauce</li>
                                     <li>🧄 Garlic Olive Oil Infusion Pack</li>
                                     <li>🍅 Sun-Dried Tomato Garnish</li>
                                     <li>🍝 Organic Whole Wheat Pasta</li>
                                 </ul>
-                                <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
+                                <Slide direction="down" cascade damping={0.15} triggerOnce>
+                                      <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
                                     START JOURNEY
                                 </button>
+                                </Slide>
+                              
+                                </Slide>
                             </div>
 
                             {/* Optional right side space */}
@@ -70,10 +78,11 @@ const Slider = () => {
                         <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-16">
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
-                                <h1 className="text-3xl md:text-5xl font-light leading-tight">
+                                 <Slide direction="up" cascade damping={0.15} triggerOnce delay={300}> <h1 className="text-3xl md:text-5xl font-light leading-tight">
                                     Spicy Chowmein <br />
                                     <span className="font-bold">10-Minute </span>
                                 </h1>
+                               
                                 <ul className="space-y-2 text-base">
                                     <li>🍜 Premium Stir-Fry Noodles</li>
                                     <li>🌶️ Signature Spicy Sauce Blend</li>
@@ -81,9 +90,11 @@ const Slider = () => {
                                     <li>🧄 Garlic & Ginger Flavor Boosters</li>
 
                                 </ul>
-                                <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
+                                </Slide>
+                                   <Slide direction="down" cascade damping={0.15} triggerOnce><button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
                                     START JOURNEY
-                                </button>
+                                </button></Slide>
+                                
                             </div>
 
                             {/* Optional right side space */}
@@ -108,6 +119,7 @@ const Slider = () => {
                         <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-16">
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
+                               <Slide direction="up" cascade damping={0.15} triggerOnce delay={300}>
                                 <h1 className="text-3xl md:text-5xl font-light leading-tight">
                                     Chocolate Cake <br />
                                     <span className="font-bold">Bake Perfect</span>
@@ -119,10 +131,11 @@ const Slider = () => {
                                     <li>🍫 Ready-to-Spread Chocolate Ganache</li>
                                    
                                 </ul>
-
-                                <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
+                                </Slide>
+                                       <Slide direction="down" cascade damping={0.15} triggerOnce> <button className="bg-white text-black px-6 py-3 mt-4 hover:bg-gray-200">
                                     START JOURNEY
-                                </button>
+                                </button></Slide>
+                               
                             </div>
 
                             {/* Optional right side space */}

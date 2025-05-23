@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import { FaHeart } from "react-icons/fa";
+import { Fade} from 'react-awesome-reveal';
+
 
 const RecipeCard = ({ recipe }) => {
   const {
@@ -12,7 +14,8 @@ const RecipeCard = ({ recipe }) => {
   } = recipe;
 
   return (
-    <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all">
+    <Fade direction="up" delay={200} triggerOnce>
+        <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all">
       <figure>
         <img src={image || '/placeholder.jpg'} alt={title} className="w-full h-48 object-cover" />
       </figure>
@@ -28,6 +31,8 @@ const RecipeCard = ({ recipe }) => {
         </div>
       </div>
     </div>
+    </Fade>
+    
   );
 };
 

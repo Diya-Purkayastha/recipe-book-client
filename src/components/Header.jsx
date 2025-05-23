@@ -57,8 +57,8 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="login-btn md:flex md:gap-5">
-                        <label className="cursor-pointer flex items-center gap-2 shadow-sm p-1 bg-secondary rounded-2xl">
+                    <div className="login-btn flex gap-5">
+                        <label className="cursor-pointer flex items-center gap-2 shadow-sm  p-1 bg-secondary rounded-2xl">
                             🌞
                             <input
                                 type="checkbox"

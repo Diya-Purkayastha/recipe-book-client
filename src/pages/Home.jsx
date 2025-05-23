@@ -3,6 +3,7 @@ import Slider from '../components/Slider';
 import TopRecipes from '../components/TopRecipes';
 import IngredientsHome from '../components/IngredientsHome';
 import BlogHome from '../components/BlogHome';
+import { Slide } from 'react-awesome-reveal';
 
 const blogPromise = fetch('/blog.json').then(res=>res.json());
 const Home = () => {
@@ -22,12 +23,15 @@ const Home = () => {
                 <h2 className="text-4xl font-bold mb-2">Read. Crave. Cook.</h2>
                 <p className="text-lg">Bite into Flavor, Stay for the Stories</p>
                 </div>
-                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 my-6'>
+                <Slide delay={300} direction='up' triggerOnce>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-6 my-6'>
                 
                 {
                 blogs.map(blog =>  <BlogHome blog={blog}></BlogHome>)
                }
                </div>
+                </Slide>
+                 
                 </div>
               
         </div>

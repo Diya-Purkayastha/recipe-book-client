@@ -1,10 +1,12 @@
 import React from 'react';
+
 import { Link } from 'react-router';
 
 const BlogHome = ({ blog }) => {
     console.log(blog);
     return (
-        <div className="card bg-base-100 image-full  shadow-sm">
+       
+                 <div className="card bg-base-100 image-full  shadow-sm">
             <figure>
                 <img className='object-cover'
                     src={blog.img}
@@ -24,6 +26,8 @@ const BlogHome = ({ blog }) => {
                 </div>
             </div>
         </div>
+      
+       
     );
 };
 
