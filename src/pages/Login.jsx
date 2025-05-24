@@ -34,7 +34,7 @@ const Login = () => {
             .catch((error) => {
                 const errorMessag = error.code;
                 setErrorMessage(errorMessag);
-                toast.error(errorMessage);
+                // toast.error(errorMessage);
                 
             });
             
@@ -54,7 +54,7 @@ const Login = () => {
         .catch((error) => {
             const errorMessag = error.code;
             setErrorMessage(errorMessag);
-            toast.error(errorMessage);
+            // toast.error(errorMessage);
             
         });
     }
@@ -86,13 +86,16 @@ const Login = () => {
                             //toggle eye icon
                             type='button'
                             onClick={() => setShowPassword(!showPassword)}
-                            className='btn btn-xs absolute p-0 rounded-full top-0 right-6 z-10 bg-white shadow-none'>
+                            className='btn btn-xs absolute p-2 rounded-full top-2 right-6 z-10 bg-white shadow-none'>
 
                             {
                                 showPassword ? <FaEyeSlash size={18} color='black'/> : <FaEye size={18} color='black'/>
                             }
                         </button>
                        </div>
+                       {
+                        errorMessage && <h1 className='text-red-500'>Error: {errorMessage}</h1>
+                       }
                         <div ><a onClick={handleForgetPass} className="link link-hover">Forgot password?</a></div>
 
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>

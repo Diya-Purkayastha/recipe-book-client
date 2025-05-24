@@ -1,14 +1,13 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
-import { toast } from 'react-toastify';
 import { BsGoogle } from 'react-icons/bs';
 import useTitle from '../hook/useTitle';
 
 const Register = () => {
     useTitle("Register")
     const { createUser, setUser, updateUser, googleSignIn } = use(AuthContext)
-    // const [passError, setPassError] = useState(" ")
+    const [passError, setPassError] = useState(" ")
     const navigate = useNavigate()
 
     const handleRegister = e => {
@@ -24,7 +23,7 @@ const Register = () => {
             return regex.test(password);
         };
         if (!isValidPassword(password)) {
-            toast.error("Password must include uppercase, lowercase, and be at least 6 characters.");
+            setPassError("Password must include uppercase, lowercase, and be at least 6 characters.");
             return;
         }
 
@@ -73,7 +72,9 @@ const Register = () => {
                         {/* password */}
                         <label className="label">Password</label>
                         <input type="password" className="input" placeholder="Password" name='password' required />
-
+                        {
+                            passError && <h1 className='text-red-500'>{passError}</h1>
+                        }
                         <button type='submit' className="btn btn-neutral mt-4">Register</button>
                         <button onClick={handleGoogle} className="btn btn-secondary ">
                             <BsGoogle></BsGoogle> Login with Google
