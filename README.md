@@ -34,19 +34,15 @@ This is the frontend of the RecipeBook application — a platform where users ca
 ![image](https://github.com/user-attachments/assets/8a78ba24-9080-4d78-8e94-94604b80839f)
 ![image](https://github.com/user-attachments/assets/fb4f1d32-a7a5-441b-baf2-631192d49e2c)
 
-
-
-### ✅ **Clone Instructions**
-
-````markdown
 ## 💻 Local Setup Instructions
 
 To run this project locally, follow these steps:
 
 1. **Clone the Repository:**
+
    ```bash
-   git clone https://github.com/Diya-Purkayastha/recipe-book-server/
-````
+   git clone https://github.com/Diya-Purkayastha/recipe-book-client.git
+   cd recipe-book-client   ```
 
 2. **Install Dependencies:**
 
@@ -63,16 +59,13 @@ To run this project locally, follow these steps:
 4. **Visit the App:**
    Open your browser and go to `http://localhost:5173`
 
-````
+---
 
 
-### ✅ **Thank You **
-
-```markdown
 ## 🙌 Thank You for Visiting the Project!
 
-I hope you enjoyed exploring this project.  
-If you found it useful or inspiring, feel free to give it a ⭐ on GitHub.  
-Your feedback is always welcome!
-````
+I hope you enjoyed exploring this project. If you found it useful or inspiring, feel free to give it a ⭐ on GitHub. Your feedback is always welcome!
+
+---
+
 Happy Coding 🚀
