@@ -51,7 +51,7 @@ const RecipeDetails = () => {
   } = recipe;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
+    <div className="max-w-4xl mx-auto px-4 py-10 mt-30">
       <div className="card bg-base-100 shadow-xl">
         <figure><img src={image || '/placeholder.jpg'} alt={title} /></figure>
         <div className="card-body">

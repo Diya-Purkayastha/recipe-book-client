@@ -53,7 +53,7 @@ const Register = () => {
     }
 
     return (
-        <div className='my-5' data-aos = "fade-up">
+        <div className='my-5 pt-20' data-aos = "fade-up">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto py-5">
                 <form onSubmit={handleRegister} className="card-body">
                     <h1 className="text-3xl font-semibold text-center">Register your account</h1>

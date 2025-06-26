@@ -7,15 +7,15 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #000000;
-  --color-secondary: #ee5200;
-  --color-accent: #494949;
+  --color-primary: #f05400;
+  --color-secondary: #4a4a4a;
+  --color-accent: #404000;
 }
 @plugin "daisyui/theme" {
   name: "dark";
-  --color-secondary: #494949;
-  --color-primary: #ff751a;
-  --color-accent: #bfbfbf;
+  --color-secondary: #b5b5b5;
+  --color-primary: #ff630f;
+  --color-accent: #404040;
 }
 .btn{
   color:white

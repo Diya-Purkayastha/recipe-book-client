@@ -7,13 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const mainLayout = () => {
     const location = useLocation();
-    const isHome = location.pathname === '/';
+    // const isHome = location.pathname === '/';
     const isAddRecipe = location.pathname === '/addrecipe';
     return (
         <div className="relative" >
-            {isHome && (
-                <div className="absolute top-0 left-0 w-full h-[500px] bg-black -z-10" ></div>
-            )}
+            {/* {isHome && (
+                <div className="absolute top-0 left-0 w-full h-[500px] bg-secondary -z-10" ></div>
+            )} */}
             {
                 isAddRecipe && (
                     <div className="absolute top-0 left-0 w-full h-full -z-10">
@@ -32,7 +32,7 @@ const mainLayout = () => {
                 )
             }
             <Header></Header>
-            <main className='w-11/12 mx-auto min-h-[calc(100vh-335px)]'>
+            <main className=' min-h-[calc(100vh-335px)]'>
 
                 <Outlet></Outlet>
                 <ToastContainer />

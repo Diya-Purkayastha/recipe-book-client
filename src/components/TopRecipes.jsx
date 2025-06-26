@@ -13,14 +13,14 @@ const TopRecipes = () => {
   }, []);
 
   return (
-    <section className="px-4 py-8 max-w-7xl mx-auto">
+    <section className="px-4 mx-auto py-8">
       <div className='flex items-center justify-center mb-6'>
           <Lottie animationData={fire} loop={true} style={{ width: 50, height: 65 }}  />
-        <h2 className="text-3xl font-bold text-center "> Top Recipes</h2>
+        <h2 className="text-4xl text-primary font-bold text-center "> Top Recipes</h2>
       </div>
 
       {topRecipes.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {topRecipes.map(recipe => (
             <RecipeCard key={recipe._id} recipe={recipe} />
           ))}

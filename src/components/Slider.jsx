@@ -10,7 +10,7 @@ import { Slide } from 'react-awesome-reveal';
 
 const Slider = () => {
     return (
-        <div className="w-full h-[80vh] group relative ">
+        <div className="w-full h-[80vh] group relative pt-5">
             <Swiper
                 modules={[Navigation, Pagination, A11y]}
                 spaceBetween={50}
@@ -22,7 +22,7 @@ const Slider = () => {
                 {/* Slide 1 */}
                 <SwiperSlide>
                     <div
-                        className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10 rounded-2xl"
+                        className="relative h-[500px] md:h-[70vh] w-full bg-cover bg-center flex items-center rounded-2xl"
                         style={{
                             backgroundImage: "url('https://i.ibb.co/sGShmx6/eaters-collective-12e-HC6-Fx-Pyg-unsplash.jpg')",
                         }}
@@ -35,7 +35,7 @@ const Slider = () => {
                             {/* Left Text Content */}
                             <div className="md:w-1/2 text-center md:text-left py-12 md:pl-10 space-y-6 text-white">
                             <Slide direction="up" cascade damping={0.15} triggerOnce delay={300}>
-                                 <h1 className="text-3xl md:text-5xl font-light leading-tight">
+                                 <h1 className="text-3xl md:text-5xl font-light leading-tight ">
                                     Healthy Pasta <br />
                                     <span className="font-bold">Nutritional Info</span>
                                 </h1>
@@ -66,7 +66,7 @@ const Slider = () => {
                 {/* Slide 2 */}
                 <SwiperSlide>
                     <div
-                        className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10" // ← added mt-10
+                        className="relative h-[500px] md:h-[70vh] w-full bg-cover bg-center flex items-center " // ← added mt-10
                         style={{
                             backgroundImage: "url('https://i.ibb.co/5W6TWmSv/amirali-mirhashemian-pc-GND1-s-T5-I-unsplash.jpg')",
                         }}
@@ -107,7 +107,7 @@ const Slider = () => {
                 {/* Slide 3 */}
                 <SwiperSlide>
                     <div
-                        className="relative h-[400px] md:h-[500px] w-full bg-cover bg-center flex items-center mt-10" // ← added mt-10
+                        className="relative h-[500px] md:h-[70vh] w-full bg-cover bg-center flex items-center " // ← added mt-10
                         style={{
                             backgroundImage: "url('https://i.ibb.co/cXprpZJg/david-holifield-k-Pxsq-UGne-XQ-unsplash.jpg')",
                         }}

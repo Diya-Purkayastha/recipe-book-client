@@ -12,7 +12,7 @@ const BlogDetails = () => {
         setBlog(blogDetails)
     }, [data, id])
     return (
-        <div className="max-w-6xl mx-auto my-20 px-4">
+        <div className="max-w-6xl mx-auto my-20 px-4 pt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
            
                 <div>

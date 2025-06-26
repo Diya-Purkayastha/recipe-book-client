@@ -36,7 +36,7 @@ const ForgetPass = () => {
     };
 
     return (
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-10">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-30">
             <div className="card-body">
                 <h1 className='card-title'>Change Password Now</h1>
                 <fieldset className="fieldset">
