@@ -40,8 +40,8 @@ const Home = () => {
                             }
                         </div>
                     </Slide>
-
                 </div>
+
                 <Slide delay={300} direction='up' triggerOnce>
                 <PromotionalBanner></PromotionalBanner>
                 </Slide>

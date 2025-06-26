@@ -46,7 +46,7 @@ const Header = () => {
             <li><NavLink to="/allrecipe">All Items</NavLink></li>
             <li><NavLink to="/about">About Us</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
-            <li><NavLink to="/support">Support</NavLink></li>
+            <li><NavLink to="/privacypolicy">Support</NavLink></li>
             {user && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
         </>
     );

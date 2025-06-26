@@ -13,67 +13,96 @@ import PrivacyPolicy from "../pages/PrivacyPolicy.jsx";
 import RecipeDetails from "../pages/RecipeDetails.jsx";
 import BlogDetails from "../pages/BlogDetails.jsx";
 import ForgetPass from "../pages/ForgetPass.jsx";
+import DashboardLayout from "../layout/DashboardLayout.jsx";
+import Overview from "../components/Overview.jsx";
+import DashboardAllItems from "../components/DashboardAllItems.jsx";
+import About from "../pages/About.jsx";
+import ContactUs from "../pages/ContactUs.jsx";
 
 
 export const Router = createBrowserRouter([
     {
-        path:'/',
-        Component:mainLayout,
-        children:[
+        path: '/',
+        Component: mainLayout,
+        children: [
             {
-            index:true,
-            path:'/',
-            Component:Home
+                index: true,
+                path: '/',
+                Component: Home
             },
             {
-                path:'/login',
-                Component:Login
+                path: '/login',
+                Component: Login
             },
             {
-                path:'/register',
-                Component:Register
+                path: '/register',
+                Component: Register
             },
             {
-                path:'/allrecipe',
+                path: '/allrecipe',
                 Component: AllRecipe
             },
+
             {
-                path:'/addrecipe',
+                path: '/recipe/:id',
                 element: <PrivateRoute>
-                    <AddRecipe></AddRecipe>
-                </PrivateRoute>
-            },
-            {
-                path:'/myrecipe',
-               element: <PrivateRoute>
-                 <MyRecipe></MyRecipe>
-               </PrivateRoute>
-            },
-            {
-                path:'/recipe/:id',
-                element:<PrivateRoute>
                     <RecipeDetails></RecipeDetails>
                 </PrivateRoute>
             },
             {
-                path:'/privacypolicy',
-                Component:PrivacyPolicy
+                path: '/privacypolicy',
+                Component: PrivacyPolicy
             },
             {
-                path:'/blog/:id',
-                Component:BlogDetails,
+                path: '/blog/:id',
+                Component: BlogDetails,
                 loader: () => fetch('/blog.json')
             },
             {
-                path:'/forgetpass',
+                path: '/forgetpass',
                 Component: ForgetPass
+            },
+            {
+                path:'/about',
+                Component:About
+            },
+            {
+                path:'/contact',
+                Component:ContactUs
             }
-    
-    
-    ]
+
+
+        ]
     },
     {
-        path:'/*',
-        element:<ErrorPage></ErrorPage>
+        path: '/dashboard',
+        element: <PrivateRoute>
+            <DashboardLayout></DashboardLayout>
+        </PrivateRoute>,
+        children: [
+            {
+                index: true,
+                element:<Overview></Overview>
+            },
+            {
+                path: 'myrecipe',
+                Component:MyRecipe
+
+            },
+             {
+                path: 'addrecipe',
+                element: <AddRecipe></AddRecipe>
+                
+            },
+            {
+                path:'allitems',
+                Component: DashboardAllItems
+            }
+            
+        ]
+    },
+    {
+        path: '/*',
+        element: <ErrorPage></ErrorPage>
     }
 ])

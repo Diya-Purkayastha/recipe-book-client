@@ -80,16 +80,16 @@ const AddRecipe = () => {
   };
 
   return (
-    <div className=" px-4 py-10 max-w-5xl mx-auto ">
+    <div className=" px-4 py-10 max-w-5xl mx-auto bg-base-200 shadow-lg">
       <div className='flex justify-center mt-0'>
         <Lottie animationData={animationData} loop={true} style={{ width: 150, height: 150 }}  />
       </div>
-      <h2 className="text-4xl font-bold text-white text-center mb-10"> Add a New Recipe</h2> 
+      <h2 className="text-4xl font-bold text-primary text-center mb-10"> Add a New Recipe</h2> 
       
       
     
 
-      <form onSubmit={handleSubmit}  className='border p-2 rounded-2xl border-white'>
+      <form onSubmit={handleSubmit}  className='border text-primary p-2 rounded-2xl border-white'>
 
         <div className="flex flex-col gap-4">
           <input
@@ -158,10 +158,10 @@ const AddRecipe = () => {
          </div>
 
           <div>
-            <label className="block mb-2 font-medium text-white">Categories:</label>
+            <label className="block mb-2 font-medium ">Categories:</label>
             <div className="flex flex-wrap gap-3">
               {categoryOptions.map((cat) => (
-                <label key={cat} className="label cursor-pointer text-white">
+                <label key={cat} className="label cursor-pointer text-primary">
                   <input
                     type="checkbox"
                     name="categories"

@@ -70,62 +70,86 @@ const MyRecipe = () => {
 
   return (
     <div className="px-6 py-10 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center">🧑‍🍳 My Recipes</h2>
+      <h2 className="text-3xl font-bold mb-6 text-primary text-center">🧑‍🍳 My Recipes</h2>
 
       {recipes.length === 0 ? (
         <p className="text-center">No recipes found.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recipes.map((recipe) => (
-            <div key={recipe._id} className="card bg-base-100 shadow-md">
-              <figure><img src={recipe.image || '/placeholder.jpg'} alt={recipe.title} /></figure>
-              <div className="card-body">
-                <h2 className="card-title">{recipe.title}</h2>
-                <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
-                <p><strong>Instructions:</strong> {recipe.instructions}</p>
-                <p><strong>Cuisine:</strong> {recipe.cuisineType}</p>
-                <p><strong>Prep Time:</strong> {recipe.preparationTime} min</p>
-                <p>
-                  <strong>Categories:</strong>{' '}
-                  {recipe.categories?.map((cat, i) => (
-                    <span key={i}>{cat}{i < recipe.categories.length - 1 ? ', ' : ''}</span>
-                  ))}
-                </p>
-                <p><strong>Likes:</strong> {recipe.likeCount}</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-sm btn-warning" onClick={() => setEditing(recipe)}>Update</button>
-                  <button className="btn btn-sm btn-error" onClick={() => handleDelete(recipe._id)}>Delete</button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <table className="table table-zebra w-full">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Photo</th>
+              <th>Title</th>
+              <th>Prep Time</th>
+              <th>Cuisine</th>
+              <th>Categories</th>
+              <th>Likes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {recipes.map((recipe, index) => (
+              <tr key={recipe._id}>
+                <th>{index + 1}</th>
+                <td>
+                  <div className="avatar">
+                    <div className="w-12 rounded">
+                      <img src={recipe.image || '/placeholder.jpg'} alt={recipe.title} />
+                    </div>
+                  </div>
+                </td>
+                <td>{recipe.title}</td>
+                <td>{recipe.preparationTime} min</td>
+                <td>{recipe.cuisineType}</td>
+                <td>{recipe.categories?.join(', ')}</td>
+                <td>{recipe.likeCount || 0}</td>
+                <td className="flex flex-col lg:flex-row gap-2">
+                  <button
+                    className="btn btn-xs btn-secondary"
+                    onClick={() => setEditing(recipe)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="btn btn-xs btn-primary"
+                    onClick={() => handleDelete(recipe._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
 
       {/* Update Modal */}
       {editing && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <form
-            onSubmit={handleUpdate}
-            className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg space-y-4"
-          >
-            <h3 className="text-xl font-bold">Update Recipe</h3>
-            <input name="image" defaultValue={editing.image} placeholder="Image URL" className="input input-bordered w-full" required />
-            <input name="title" defaultValue={editing.title} placeholder="Title" className="input input-bordered w-full" required />
-            <textarea name="ingredients" defaultValue={editing.ingredients} placeholder="Ingredients" className="textarea textarea-bordered w-full" required />
-            <textarea name="instructions" defaultValue={editing.instructions} placeholder="Instructions" className="textarea textarea-bordered w-full" required />
-            <input name="cuisineType" defaultValue={editing.cuisineType} placeholder="Cuisine Type" className="input input-bordered w-full" required />
-            <input name="preparationTime" type="number" defaultValue={editing.preparationTime} placeholder="Prep Time" className="input input-bordered w-full" required />
-            <input name="categories" defaultValue={editing.categories?.toString()} placeholder="Categories (comma-separated)" className="input input-bordered w-full" required />
+        <div className="fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-40 flex items-center justify-center z-50">
+          <div className="relative p-6 rounded-lg w-full max-w-md shadow-lg space-y-4">
 
-            <div className="flex justify-end gap-2">
-              <button type="button" onClick={() => setEditing(null)} className="btn btn-outline">Cancel</button>
-              <button type="submit" className="btn btn-primary">Update</button>
-            </div>
-          </form>
+            <form onSubmit={handleUpdate} className="space-y-4">
+              <h3 className="text-xl text-primary font-bold">Update Recipe</h3>
+              <input name="image" defaultValue={editing.image} placeholder="Image URL" className="input input-bordered w-full" required />
+              <input name="title" defaultValue={editing.title} placeholder="Title" className="input input-bordered w-full" required />
+              <textarea name="ingredients" defaultValue={editing.ingredients} placeholder="Ingredients" className="textarea textarea-bordered w-full" required />
+              <textarea name="instructions" defaultValue={editing.instructions} placeholder="Instructions" className="textarea textarea-bordered w-full" required />
+              <input name="cuisineType" defaultValue={editing.cuisineType} placeholder="Cuisine Type" className="input input-bordered w-full" required />
+              <input name="preparationTime" type="number" defaultValue={editing.preparationTime} placeholder="Prep Time" className="input input-bordered w-full" required />
+              <input name="categories" defaultValue={editing.categories?.toString()} placeholder="Categories (comma-separated)" className="input input-bordered w-full" required />
+
+              <div className="flex justify-end gap-2">
+                <button type="button" onClick={() => setEditing(null)} className="btn btn-primary">Cancel</button>
+                <button type="submit" className="btn btn-secondary">Update</button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
+
     </div>
+
   );
 };
 
