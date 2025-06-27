@@ -26,7 +26,7 @@ const Home = () => {
                 </div>
                 <IngredientsHome></IngredientsHome>
 
-                <div className='mt-40'>
+                <div className='mt-30 lg:mt-40'>
                     <div className='text-center'>
                         <small>Where Recipes Come with Stories</small>
                         <h2 className="text-4xl text-primary font-bold mb-2">Read. Crave. Cook.</h2>

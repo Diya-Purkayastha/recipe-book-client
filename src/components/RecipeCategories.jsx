@@ -33,7 +33,7 @@ const categories = [
 
 const RecipeCategories = () => {
     return (
-        <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-50">
+        <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-30 lg:mt-50">
             {/* Left Side Content */}
             <div className="max-w-2xl mx-auto">
                 <div className="flex gap-4 my-4">

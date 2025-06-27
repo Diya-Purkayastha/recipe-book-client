@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center text-white p-10 relative overflow-hidden pt-20 pb-10 px-4 mt-20">
+        <footer className="footer footer-horizontal footer-center text-white p-10 relative overflow-hidden pt-30 md:pt-20 pb-10 px-4 mt-20">
              <div className="absolute inset-0 -z-10">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
