@@ -11,12 +11,13 @@ const DashboardAllItems = () => {
     }, []);
 
     return (
-        <div className="px-4 py-10 max-w-7xl mx-auto overflow-x-auto">
+        <div className="py-10 max-w-7xl mx-auto overflow-x-auto">
             <h2 className="text-3xl font-bold mb-6 text-primary text-center">📋 All Recipes</h2>
 
             {recipes.length === 0 ? (
                 <p className="text-center">No recipes found.</p>
             ) : (
+                 <div className="overflow-x-auto rounded-xl shadow-sm border border-gray-200">
                 <table className="table table-zebra w-full">
                     <thead>
                         <tr>
@@ -54,6 +55,7 @@ const DashboardAllItems = () => {
                         ))}
                     </tbody>
                 </table>
+                </div>
             )}
         </div>
     );

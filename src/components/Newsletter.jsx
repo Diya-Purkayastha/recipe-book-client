@@ -7,7 +7,7 @@ const Newsletter = () => {
         toast.success('Thanks for your attention')
     }
   return (
-    <div className=" py-12 mt-30">
+    <div className=" py-12 mt-50">
         <div className="relative w-full bg-[#fff8f3] rounded-xl overflow-hidden">
                 {/* 🔆 Top-centered orange glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-40 bg-[#f05400] blur-3xl opacity-30 z-0" />

@@ -69,12 +69,13 @@ const MyRecipe = () => {
   };
 
   return (
-    <div className="px-6 py-10 max-w-6xl mx-auto">
+    <div className="py-10 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-primary text-center">🧑‍🍳 My Recipes</h2>
 
       {recipes.length === 0 ? (
         <p className="text-center">No recipes found.</p>
       ) : (
+        <div className="overflow-x-auto rounded-xl shadow-sm border border-gray-200">
         <table className="table table-zebra w-full">
           <thead>
             <tr>
@@ -122,6 +123,7 @@ const MyRecipe = () => {
             ))}
           </tbody>
         </table>
+        </div>
       )}
 
       {/* Update Modal */}

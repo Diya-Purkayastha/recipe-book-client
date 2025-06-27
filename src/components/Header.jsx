@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { FaMoon, FaSun } from "react-icons/fa";
+import Logo from './Logo';
 
 const Header = () => {
     const { user, logOut } = use(AuthContext);
@@ -69,7 +70,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <a className=" text-xl"><div className="md:text-3xl text-white font-medium"><h1>Recipe<span className='text-secondary'>booK</span></h1></div></a>
+                    <Logo></Logo>
                 </div>
                 <div className="navbar-center  hidden lg:flex ">
                     <ul className="menu menu-horizontal flex gap-4 text-[16px] px-1">

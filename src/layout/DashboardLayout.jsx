@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router';
+import Logo from '../components/Logo';
 
 
 const DashboardLayout = () => {
     
     return (
-        <div className="drawer lg:drawer-open w-11/12 mx-auto gap-4">
+        <section className='bg-[#fff8f3] min-h-screen'>
+            <div className="drawer lg:drawer-open w-11/12 mx-auto gap-4">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
 
@@ -40,11 +42,16 @@ const DashboardLayout = () => {
             </div>
             <div className="drawer-side ">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu bg-primary text-center text-base-content min-h-full w-100 p-4"> 
+                <ul className="menu bg-primary text-base-content min-h-full w-100 p-4"> 
                     {/* Sidebar content here */}
-                    <div className=" text-4xl font-bold text-white border-b-2 mt-4"><NavLink to="/dashboard">Dashboard</NavLink></div>
+                    <div className=''>
+                        <Logo></Logo>
+                    </div>
+                    <div className=" text-4xl font-bold text-white border-b-2  mt-4">
+                        
+                    
+                    <NavLink to="/dashboard">Dashboard</NavLink></div>
                     <div className='text-white font-semibold text-lg'>
-                        <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/dashboard/allitems">All Items</NavLink></li>
                     <li><NavLink to="/dashboard/myrecipe">My Recipe</NavLink></li>
                     <li><NavLink to="/dashboard/addrecipe">Add Recipe</NavLink></li>
@@ -52,6 +59,7 @@ const DashboardLayout = () => {
                 </ul>
             </div>
         </div>
+        </section>
     );
 };
 
