@@ -13,6 +13,12 @@ This is the frontend of the RecipeBook application — a platform where users ca
 - 📦 **Add, Update, Delete Recipes** via forms with real-time feedback
 - ❤️ **Like System** where users can like others’ recipes (not their own)
 - 🧭 **Protected Routes** with React Router to secure private pages
+- 📄 **Recipe Detail View** for each recipe with dynamic routing
+- 🗂️ **Recipe Filtering and Sorting** based on categories or likes
+- 🧑‍🍳 **My Recipes Dashboard** with user-specific data management
+- 📱 **Fully Responsive Design** for all screen sizes (Mobile, Tablet, Desktop)
+- 📊 **Clean Dashboard Table View** for recipe management with Zebra-style rows
+
 
 ---
 
@@ -33,6 +39,7 @@ This is the frontend of the RecipeBook application — a platform where users ca
 ## 📸 Screenshot
 ![image](https://github.com/user-attachments/assets/8a78ba24-9080-4d78-8e94-94604b80839f)
 ![image](https://github.com/user-attachments/assets/fb4f1d32-a7a5-441b-baf2-631192d49e2c)
+![image](https://github.com/user-attachments/assets/29e6bd4f-2c5e-4b4f-8c39-1fb2db33bfd6)
 
 ## 💻 Local Setup Instructions
 
