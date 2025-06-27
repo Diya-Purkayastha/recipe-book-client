@@ -37,8 +37,9 @@ This is the frontend of the RecipeBook application — a platform where users ca
 - **React Awesome Reveal** – Animation effects
 
 ## 📸 Screenshot
-![image](https://github.com/user-attachments/assets/8a78ba24-9080-4d78-8e94-94604b80839f)
-![image](https://github.com/user-attachments/assets/fb4f1d32-a7a5-441b-baf2-631192d49e2c)
+![image](https://github.com/user-attachments/assets/d7e33e25-5151-4539-bcfb-fcf3304907aa)
+![image](https://github.com/user-attachments/assets/44c54291-14b9-402c-9c65-c1e0d5e97d39)
+![image](https://github.com/user-attachments/assets/064b6766-70b4-45c4-a7b5-93a9384a0d6d)
 ![image](https://github.com/user-attachments/assets/29e6bd4f-2c5e-4b4f-8c39-1fb2db33bfd6)
 
 ## 💻 Local Setup Instructions
